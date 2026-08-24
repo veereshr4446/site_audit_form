@@ -533,7 +533,7 @@ form.addEventListener('submit', async (e) => {
   const statusMsg = document.getElementById('statusMsg');
   const submitBtn = form.querySelector('button.submit');
 
-  if(SCRIPT_URL.indexOf('https://script.google.com/macros/s/AKfycbwQWyB7iz9myv-RFhM1ASKeDyXO4KEOb4Rp_AsyAvccyxK_hSQRWHB-DyjPmlWQujrM/exec') === 0){
+  if(SCRIPT_URL.indexOf('PASTE_YOUR') === 0){
     statusMsg.textContent = 'Form is not connected to a sheet yet — see SETUP_INSTRUCTIONS.md.';
     return;
   }
