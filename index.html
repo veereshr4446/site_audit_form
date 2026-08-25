@@ -208,6 +208,16 @@
     cursor:pointer;
   }
   input.mono{font-family:'IBM Plex Mono',monospace;font-weight:500;letter-spacing:.01em;}
+
+  .phone-row{display:flex;gap:8px;}
+  .phone-row .phone-code{
+    width:88px;flex-shrink:0;
+    padding-left:11px;padding-right:28px;
+    background-position:right 9px center;
+    font-family:'IBM Plex Mono',monospace;
+    text-align:center;
+  }
+  .phone-row input[type=text]{flex:1;min-width:0;}
   textarea{resize:vertical;min-height:64px;line-height:1.5;}
   .hint{font-size:11.5px;color:var(--muted);margin-top:6px;display:flex;gap:5px;align-items:flex-start;line-height:1.4;}
   .hint svg{width:13px;height:13px;flex-shrink:0;margin-top:1px;stroke:var(--muted);fill:none;stroke-width:2;}
@@ -385,7 +395,7 @@
 
         <div class="field">
           <label>SPOC Name <span class="tag opt">Optional</span></label>
-          <input type="text" id="spocName" placeholder="e.g. Rocky">
+          <input type="text" id="spocName" placeholder="e.g. Ramesh Kumar">
         </div>
 
         <div class="field">
@@ -601,7 +611,11 @@ form.addEventListener('submit', async (e) => {
     "Audit/ Re-Audit": document.getElementById('auditType').value,
     "Team": formatTeam(document.getElementById('team').value),
     "SPOC Name": document.getElementById('spocName').value.trim(),
-    "SPOC Contact": document.getElementById('spocContact').value.trim(),
+    "SPOC Contact": (function(){
+      const num = document.getElementById('spocContact').value.trim();
+      if(!num) return "";
+      return document.getElementById('spocCode').value + " " + num;
+    })(),
     "Planned Date": document.getElementById('plannedDate').value,
     "Execution Date": document.getElementById('executionDate').value,
     "Audit Engineers": document.getElementById('auditEngineers').value.trim(),
