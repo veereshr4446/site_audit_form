@@ -218,6 +218,32 @@
     text-align:center;
   }
   .phone-row input[type=text]{flex:1;min-width:0;}
+
+  .footer-credit{
+    display:flex;flex-direction:column;align-items:center;gap:5px;
+    margin-top:28px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:.03em;
+    color:var(--muted);
+    opacity:.85;
+  }
+  .fc-line1{display:flex;align-items:center;gap:6px;}
+  .fc-mark{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:16px;height:16px;border-radius:50%;
+    border:1px solid var(--muted);
+    font-size:10px;line-height:1;
+  }
+  .fc-year, .fc-made{color:var(--muted);}
+  .fc-heart{color:var(--copper);font-size:12px;}
+  .fc-name{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    letter-spacing:.04em;
+    color:var(--copper-glow);
+  }
+  .fc-rights{color:var(--muted);opacity:.7;font-size:10.5px;}
   textarea{resize:vertical;min-height:64px;line-height:1.5;}
   .hint{font-size:11.5px;color:var(--muted);margin-top:6px;display:flex;gap:5px;align-items:flex-start;line-height:1.4;}
   .hint svg{width:13px;height:13px;flex-shrink:0;margin-top:1px;stroke:var(--muted);fill:none;stroke-width:2;}
@@ -512,6 +538,18 @@
       </button>
       <div class="status-msg" id="statusMsg"></div>
     </form>
+
+    <div class="footer-credit">
+      <div class="fc-line1">
+        <span class="fc-mark">©</span>
+        <span class="fc-year">2026</span>
+        <span class="fc-made">Made with</span>
+        <span class="fc-heart">❤</span>
+        <span class="fc-made">by</span>
+        <span class="fc-name">Pooja R</span>
+      </div>
+      <div class="fc-rights">All rights reserved.</div>
+    </div>
 
   </div>
 </div>
